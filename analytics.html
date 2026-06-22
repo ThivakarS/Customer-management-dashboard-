@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Analytics | AI Gadget Marketplace</title>
+
+<link rel="stylesheet" href="css/style.css">
+
+<link
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+rel="stylesheet">
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+</head>
+
+<body>
+
+<!-- SIDEBAR -->
+
+<div class="sidebar">
+
+    <div class="logo">
+        <h2> AI Gadget</h2>
+    </div>
+
+    <ul>
+
+        <li>
+            <a href="index.html">
+                <i class="fas fa-chart-line"></i>
+                Dashboard
+            </a>
+        </li>
+
+        <li>
+            <a href="product.html">
+                <i class="fas fa-box"></i>
+                Product
+            </a>
+        </li>
+
+        <li>
+            <a href="customer.html">
+                <i class="fas fa-users"></i>
+                Customer
+            </a>
+        </li>
+
+        <li>
+            <a href="order.html">
+                <i class="fas fa-shopping-cart"></i>
+                Order
+            </a>
+        </li>
+
+        <li>
+            <a href="review.html">
+                <i class="fas fa-star"></i>
+                Review
+            </a>
+        </li>
+
+        <li class="active">
+            <a href="analytics.html">
+                <i class="fas fa-chart-pie"></i>
+                Analytics
+            </a>
+        </li>
+
+    </ul>
+
+</div>
+
+<!-- MAIN CONTENT -->
+
+<div class="main-content">
+
+    <div class="header">
+        <h1>Analytics Dashboard</h1>
+    </div>
+
+    <!-- KPI CARDS -->
+
+    <div class="cards">
+
+        <div class="card">
+            <i class="fas fa-indian-rupee-sign"></i>
+            <h3>Total Revenue</h3>
+            <h2>₹41,995</h2>
+        </div>
+
+        <div class="card">
+            <i class="fas fa-shopping-cart"></i>
+            <h3>Total Orders</h3>
+            <h2>5</h2>
+        </div>
+
+        <div class="card">
+            <i class="fas fa-box"></i>
+            <h3>Total Products</h3>
+            <h2>5</h2>
+        </div>
+
+        <div class="card">
+            <i class="fas fa-star"></i>
+            <h3>Average Rating</h3>
+            <h2>4.6 ⭐</h2>
+        </div>
+
+    </div>
+
+    <!-- REVENUE CHART -->
+
+    <div class="analytics-card">
+
+        <h2>Revenue By Orders</h2>
+
+        <canvas id="revenueChart"></canvas>
+
+    </div>
+
+    <br>
+
+    <!-- PRODUCT SALES CHART -->
+
+    <div class="analytics-card">
+
+        <h2>Product Sales Distribution</h2>
+
+        <canvas id="salesChart"></canvas>
+
+    </div>
+
+    <br>
+
+    <!-- RATING CHART -->
+
+    <div class="analytics-card">
+
+        <h2>Product Ratings</h2>
+
+        <canvas id="ratingChart"></canvas>
+
+    </div>
+
+    <br>
+
+    <!-- TOP PRODUCT -->
+
+    <div class="analytics-card">
+
+        <h2>Top Product</h2>
+
+        <table>
+
+            <thead>
+
+                <tr>
+                    <th>Product</th>
+                    <th>Price</th>
+                    <th>Category</th>
+                </tr>
+
+            </thead>
+
+            <tbody>
+
+                <tr>
+                    <td>Robot Vacuum Cleaner</td>
+                    <td>₹14999</td>
+                    <td>Robotics</td>
+                </tr>
+
+            </tbody>
+
+        </table>
+
+    </div>
+
+</div>
+
+<script>
+
+/* ==========================
+   REVENUE CHART
+========================== */
+
+new Chart(
+document.getElementById("revenueChart"),
+{
+    type:"bar",
+
+    data:{
+
+        labels:[
+            "1001",
+            "1002",
+            "1003",
+            "1004",
+            "1005"
+        ],
+
+        datasets:[{
+
+            label:"Revenue",
+
+            data:[
+                4999,
+                8999,
+                6999,
+                14999,
+                5999
+            ],
+
+            backgroundColor:[
+                "#06b6d4",
+                "#3b82f6",
+                "#8b5cf6",
+                "#22c55e",
+                "#f59e0b"
+            ]
+
+        }]
+    }
+});
+
+/* ==========================
+   PRODUCT SALES
+========================== */
+
+new Chart(
+document.getElementById("salesChart"),
+{
+    type:"pie",
+
+    data:{
+
+        labels:[
+            "Speaker",
+            "Watch",
+            "Camera",
+            "Vacuum",
+            "Door Lock"
+        ],
+
+        datasets:[{
+
+            data:[
+                1,
+                1,
+                1,
+                1,
+                1
+            ],
+
+            backgroundColor:[
+                "#06b6d4",
+                "#3b82f6",
+                "#8b5cf6",
+                "#22c55e",
+                "#f59e0b"
+            ]
+
+        }]
+    }
+});
+
+/* ==========================
+   PRODUCT RATINGS
+========================== */
+
+new Chart(
+document.getElementById("ratingChart"),
+{
+    type:"line",
+
+    data:{
+
+        labels:[
+            "Speaker",
+            "Watch",
+            "Camera",
+            "Vacuum",
+            "Door Lock"
+        ],
+
+        datasets:[{
+
+            label:"Ratings",
+
+            data:[
+                5,
+                4,
+                5,
+                4,
+                5
+            ],
+
+            borderColor:"#06b6d4",
+
+            fill:false,
+
+            tension:.3
+
+        }]
+    }
+});
+
+</script>
+
+<script src="js/app.js"></script>
+
+</body>
+</html>

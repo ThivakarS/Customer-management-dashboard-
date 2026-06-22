@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>AI Gadget Marketplace Dashboard</title>
+
+<link rel="stylesheet" href="css/style.css">
+
+<link
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+rel="stylesheet">
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+</head>
+
+<body>
+
+<!-- Sidebar -->
+
+<div class="sidebar">
+
+    <div class="logo">
+        <h2> AI Gadget</h2>
+    </div>
+
+    <ul>
+
+        <li class="active">
+            <a href="index.html">
+                <i class="fas fa-chart-line"></i>
+                Dashboard
+            </a>
+        </li>
+
+        <li>
+            <a href="product.html">
+                <i class="fas fa-box"></i>
+                Product
+            </a>
+        </li>
+
+        <li>
+            <a href="customer.html">
+                <i class="fas fa-users"></i>
+                Customer
+            </a>
+        </li>
+
+        <li>
+            <a href="order.html">
+                <i class="fas fa-shopping-cart"></i>
+                Order
+            </a>
+        </li>
+
+        <li>
+            <a href="review.html">
+                <i class="fas fa-star"></i>
+                Review
+            </a>
+        </li>
+
+        <li>
+            <a href="analytics.html">
+                <i class="fas fa-chart-pie"></i>
+                Analytics
+            </a>
+        </li>
+
+    </ul>
+
+</div>
+
+<!-- Main Content -->
+
+<div class="main-content">
+
+    <!-- Header -->
+
+    <div class="header">
+
+        <h1>Dashboard</h1>
+
+        <div class="profile">
+
+            <i class="fas fa-user-circle"></i>
+            
+
+            <span>Admin</span>
+
+        </div>
+
+    </div>
+    <!-- Cards -->
+
+    <div class="cards">
+
+        <div class="card">
+
+            <i class="fas fa-box"></i>
+
+            <h3>Total Products</h3>
+
+            <h2 id="totalProducts">5</h2>
+
+        </div>
+
+        <div class="card">
+
+            <i class="fas fa-users"></i>
+
+            <h3>Total Customers</h3>
+
+            <h2 id="totalCustomers">5</h2>
+
+        </div>
+
+        <div class="card">
+
+            <i class="fas fa-shopping-cart"></i>
+
+            <h3>Total Orders</h3>
+
+            <h2 id="totalOrders">5</h2>
+
+        </div>
+
+        <div class="card">
+
+            <i class="fas fa-indian-rupee-sign"></i>
+
+            <h3>Total Revenue</h3>
+
+            <h2 id="totalRevenue">₹41,995</h2>
+
+        </div>
+
+    </div>
+
+    <!-- Revenue Chart -->
+
+    <div class="chart-container">
+
+        <h2>Revenue Analytics</h2>
+
+        <canvas id="revenueChart"></canvas>
+
+    </div>
+
+    <!-- Recent Orders -->
+
+    <div class="table-container">
+
+        <h2>Recent Orders</h2>
+
+        <table>
+
+            <thead>
+
+                <tr>
+
+                    <th>Order ID</th>
+                    <th>Customer</th>
+                    <th>Date</th>
+                    <th>Amount</th>
+
+                </tr>
+
+            </thead>
+
+            <tbody>
+
+                <tr>
+
+                    <td>1001</td>
+                    <td>kavin</td>
+                    <td>2026-01-10</td>
+                    <td>₹4999</td>
+
+                </tr>
+
+                <tr>
+
+                    <td>1002</td>
+                    <td>Arun</td>
+                    <td>2026-01-12</td>
+                    <td>₹8999</td>
+
+                </tr>
+
+                <tr>
+
+                    <td>1003</td>
+                    <td>Priya</td>
+                    <td>2026-01-15</td>
+                    <td>₹6999</td>
+
+                </tr>
+
+                <tr>
+
+                    <td>1004</td>
+                    <td>Hari</td>
+                    <td>2026-01-18</td>
+                    <td>₹14999</td>
+
+                </tr>
+
+                <tr>
+
+                    <td>1005</td>
+                    <td>Meena</td>
+                    <td>2026-01-20</td>
+                    <td>₹5999</td>
+
+                </tr>
+
+            </tbody>
+
+        </table>
+
+    </div>
+
+    <!-- Top Products -->
+
+    <div class="product-section">
+
+        <h2>Top Products</h2>
+
+        <div class="product-grid">
+
+            <div class="product-card">
+
+                <img src="image/speaker.png" alt="AI Smart Speaker">
+
+                <h3>AI Smart Speaker</h3>
+
+                <p>₹4999</p>
+
+            </div>
+
+            <div class="product-card">
+
+                <img src="image/watch.png" alt="Smart Watch Pro">
+
+                <h3>Smart Watch Pro</h3>
+
+                <p>₹8999</p>
+
+            </div>
+
+            <div class="product-card">
+
+                <img src="image/camera.png" alt="AI Security Camera">
+
+                <h3>AI Security Camera</h3>
+
+                <p>₹6999</p>
+
+            </div>
+
+            <div class="product-card">
+
+                <img src="image/vaccum.png" alt="Robot Vacuum Cleaner">
+
+                <h3>Robot Vacuum Cleaner</h3>
+
+                <p>₹14999</p>
+
+            </div>
+
+            <div class="product-card">
+
+                <img src="image/doorlock.png" alt="Smart Door Lock">
+
+                <h3>Smart Door Lock</h3>
+
+                <p>₹5999</p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<script src="js/app.js"></script>
+<script src="js/dashboard.js"></script>
+</body>
+</html>

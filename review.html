@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Reviews | AI Gadget Marketplace</title>
+
+<link rel="stylesheet" href="css/style.css">
+
+<link
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+rel="stylesheet">
+
+</head>
+
+<body>
+
+<!-- SIDEBAR -->
+
+<div class="sidebar">
+
+    <div class="logo">
+        <h2> AI Gadget</h2>
+    </div>
+
+    <ul>
+
+        <li>
+            <a href="index.html">
+                <i class="fas fa-chart-line"></i>
+                Dashboard
+            </a>
+        </li>
+
+        <li>
+            <a href="product.html">
+                <i class="fas fa-box"></i>
+                Products
+            </a>
+        </li>
+
+        <li>
+            <a href="customer.html">
+                <i class="fas fa-users"></i>
+                Customers
+            </a>
+        </li>
+
+        <li>
+            <a href="order.html">
+                <i class="fas fa-shopping-cart"></i>
+                Orders
+            </a>
+        </li>
+
+        <li class="active">
+            <a href="review.html">
+                <i class="fas fa-star"></i>
+                Reviews
+            </a>
+        </li>
+
+        <li>
+            <a href="analytics.html">
+                <i class="fas fa-chart-pie"></i>
+                Analytics
+            </a>
+        </li>
+
+    </ul>
+
+</div>
+
+<!-- MAIN CONTENT -->
+
+<div class="main-content">
+
+    <div class="header">
+        <h1>Customer Reviews</h1>
+    </div>
+
+    <!-- REVIEW STATS -->
+
+    <div class="cards">
+
+        <div class="card">
+            <i class="fas fa-star"></i>
+            <h3>Total Reviews</h3>
+            <h2>5</h2>
+        </div>
+
+        <div class="card">
+            <i class="fas fa-award"></i>
+            <h3>Average Rating</h3>
+            <h2>4.6 ⭐</h2>
+        </div>
+
+        <div class="card">
+            <i class="fas fa-thumbs-up"></i>
+            <h3>Positive Reviews</h3>
+            <h2>100%</h2>
+        </div>
+
+    </div>
+
+    <!-- SEARCH -->
+
+    <div class="search-box">
+        <input
+        type="text"
+        id="reviewSearch"
+        placeholder="🔍 Search Reviews...">
+    </div>
+
+    <!-- REVIEWS -->
+
+    <div id="reviewContainer">
+
+        <div class="review-card">
+
+            <h3>AI Smart Speaker</h3>
+
+            <p><strong>Customer:</strong> kavin</p>
+
+            <div class="stars">
+                ⭐⭐⭐⭐⭐
+            </div>
+
+            <p>
+                Excellent sound quality
+            </p>
+
+        </div>
+
+        <div class="review-card">
+
+            <h3>Smart Watch Pro</h3>
+
+            <p><strong>Customer:</strong> Arun</p>
+
+            <div class="stars">
+                ⭐⭐⭐⭐
+            </div>
+
+            <p>
+                Battery life is good
+            </p>
+
+        </div>
+
+        <div class="review-card">
+
+            <h3>AI Security Camera</h3>
+
+            <p><strong>Customer:</strong> Priya</p>
+
+            <div class="stars">
+                ⭐⭐⭐⭐⭐
+            </div>
+
+            <p>
+                Great security features
+            </p>
+
+        </div>
+
+        <div class="review-card">
+
+            <h3>Robot Vacuum Cleaner</h3>
+
+            <p><strong>Customer:</strong> Hari</p>
+
+            <div class="stars">
+                ⭐⭐⭐⭐
+            </div>
+
+            <p>
+                Saves cleaning time
+            </p>
+
+        </div>
+
+        <div class="review-card">
+
+            <h3>Smart Door Lock</h3>
+
+            <p><strong>Customer:</strong> Meena</p>
+
+            <div class="stars">
+                ⭐⭐⭐⭐⭐
+            </div>
+
+            <p>
+                Easy to install
+            </p>
+
+        </div>
+
+    </div>
+
+</div>
+
+<script>
+
+// Review Search
+
+const reviewSearch =
+document.getElementById("reviewSearch");
+
+reviewSearch.addEventListener(
+"keyup",
+function(){
+
+    const value =
+    this.value.toLowerCase();
+
+    const reviews =
+    document.querySelectorAll(
+    ".review-card"
+    );
+
+    reviews.forEach(review=>{
+
+        const text =
+        review.textContent.toLowerCase();
+
+        review.style.display =
+        text.includes(value)
+        ? "block"
+        : "none";
+
+    });
+
+});
+
+</script>
+
+<script src="js/app.js"></script>
+<script src="js/review.js"></script>
+<div id="reviewContainer"></div>
+</body>
+</html>

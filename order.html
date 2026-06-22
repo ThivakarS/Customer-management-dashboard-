@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Orders | AI Gadget Marketplace</title>
+
+<link rel="stylesheet" href="css/style.css">
+
+<link
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+rel="stylesheet">
+
+</head>
+
+<body>
+
+<!-- SIDEBAR -->
+
+<div class="sidebar">
+
+    <div class="logo">
+        <h2>AI Gadget</h2>
+    </div>
+
+    <ul>
+
+        <li>
+            <a href="index.html">
+                <i class="fas fa-chart-line"></i>
+                Dashboard
+            </a>
+        </li>
+
+        <li>
+            <a href="product.html">
+                <i class="fas fa-box"></i>
+                Products
+            </a>
+        </li>
+
+        <li>
+            <a href="customer.html">
+                <i class="fas fa-users"></i>
+                Customers
+            </a>
+        </li>
+
+        <li class="active">
+            <a href="order.html">
+                <i class="fas fa-shopping-cart"></i>
+                Order
+            </a>
+        </li>
+
+        <li>
+            <a href="review.html">
+                <i class="fas fa-star"></i>
+                Review
+            </a>
+        </li>
+
+        <li>
+            <a href="analytics.html">
+                <i class="fas fa-chart-pie"></i>
+                Analytics
+            </a>
+        </li>
+
+    </ul>
+
+</div>
+
+<!-- MAIN CONTENT -->
+
+<div class="main-content">
+
+    <div class="header">
+        <h1>Order Management</h1>
+    </div>
+
+    <!-- ORDER STATS -->
+
+    <div class="cards">
+
+        <div class="card">
+            <i class="fas fa-shopping-cart"></i>
+            <h3>Total Orders</h3>
+            <h2>5</h2>
+        </div>
+
+        <div class="card">
+            <i class="fas fa-indian-rupee-sign"></i>
+            <h3>Total Revenue</h3>
+            <h2>₹41,995</h2>
+        </div>
+
+        <div class="card">
+            <i class="fas fa-truck"></i>
+            <h3>Delivered</h3>
+            <h2>5</h2>
+        </div>
+
+    </div>
+
+    <!-- SEARCH -->
+
+    <div class="search-box">
+        <input
+        type="text"
+        id="orderSearch"
+        placeholder="🔍 Search Orders...">
+    </div>
+
+    <!-- ORDERS TABLE -->
+
+    <div class="table-container">
+
+        <h2>Order History</h2>
+
+        <table id="orderTable">
+
+            <thead>
+
+                <tr>
+                    <th>Order ID</th>
+                    <th>Customer</th>
+                    <th>Date</th>
+                    <th>Amount</th>
+                    <th>Status</th>
+                </tr>
+
+            </thead>
+
+            <tbody id="ordersTable"></tbody>
+
+        </table>
+
+    </div>
+
+</div>
+
+<script>
+
+// Order Search
+
+const orderSearch =
+document.getElementById("orderSearch");
+
+orderSearch.addEventListener(
+"keyup",
+function(){
+
+    const value =
+    this.value.toLowerCase();
+
+    const rows =
+    document.querySelectorAll(
+    "#orderTable tbody tr"
+    );
+
+    rows.forEach(row=>{
+
+        const text =
+        row.textContent.toLowerCase();
+
+        row.style.display =
+        text.includes(value)
+        ? ""
+        : "none";
+
+    });
+
+});
+
+</script>
+
+<script src="js/app.js"></script>
+<script src="js/orders.js"></script>
+</body>
+</html>
