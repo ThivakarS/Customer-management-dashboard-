@@ -5,6 +5,7 @@ const db = require('./db');
 const app = express();
 
 app.use(cors());
+app.use(express.json());
 
 /* ======================
    ORDERS API
@@ -26,6 +27,7 @@ app.get('/api/orders', (req, res) => {
     db.query(query, (err, result) => {
 
         if (err) {
+            console.error(err);
             return res.status(500).json(err);
         }
 
@@ -56,6 +58,7 @@ app.get('/api/products', (req, res) => {
     db.query(query, (err, result) => {
 
         if (err) {
+            console.error(err);
             return res.status(500).json(err);
         }
 
@@ -74,6 +77,7 @@ app.get('/api/customers', (req, res) => {
     db.query('SELECT * FROM Users', (err, result) => {
 
         if (err) {
+            console.error(err);
             return res.status(500).json(err);
         }
 
@@ -105,6 +109,7 @@ app.get('/api/reviews', (req, res) => {
     db.query(query, (err, result) => {
 
         if (err) {
+            console.error(err);
             return res.status(500).json(err);
         }
 
@@ -131,6 +136,7 @@ app.get('/api/dashboard', (req, res) => {
     db.query(query, (err, result) => {
 
         if (err) {
+            console.error(err);
             return res.status(500).json(err);
         }
 
@@ -140,6 +146,20 @@ app.get('/api/dashboard', (req, res) => {
 
 });
 
-app.listen(5000, () => {
-    console.log('Server Running on Port 5000');
+/* ======================
+   HOME ROUTE
+====================== */
+
+app.get('/', (req, res) => {
+    res.send('AI Gadget Marketplace API is running...');
+});
+
+/* ======================
+   SERVER
+====================== */
+
+const PORT = process.env.PORT || 5000;
+
+app.listen(PORT, () => {
+    console.log(`Server Running on Port ${PORT}`);
 });
